@@ -28,7 +28,15 @@ function tick(){
       } else if(a.text.substring(0,10)=="labelLatex"){
         a1=exp[Number(a.text.substring(10,a.text.indexOf(",")))-1];
         var a2=exp[Number(a.text.substring(a.text.indexOf(",")+1,a.text.indexOf("\n")))-1];
-        a2.latex=a1.label
+        if (a1.label){
+          if (a1.editableLabelMode=="MATH"){
+              a2.latex=a1.label.substring(1,a1.label.length-1)
+          } else {
+                a2.latex=a1.label
+          }
+        } else{
+            a2.latex = ""
+        }
         window.Calc.setExpression(a2)
       } else if(a.text.substring(0,8)=="function"){
         if (func == 2){
