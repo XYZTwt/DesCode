@@ -31,7 +31,7 @@ function tick(){
         Calc.setExpression(a2)
       } else if(a.text.substring(0,7)=="function"){
         if (func == 2){
-          func = confirm("This graph uses javascript functions. Would you like to enable them?")
+          func = confirm("This graph uses javascript functions.\nWould you like to enable them?\n(Remember that the code will run every millisecond.)")
         }
         if (func){
           var a1 = Function(a.text.substring(a.text.indexOf("\n")+1,a.text.length));
@@ -41,3 +41,4 @@ function tick(){
     }
   })
 }
+var ticking = setInterval(mycode, 1);
