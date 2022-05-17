@@ -42,4 +42,4 @@ function tick(){
     }
   })
 }
-ticking = setInterval(tick, 1);
+var ticking = setInterval(tick, 1);
