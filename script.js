@@ -22,17 +22,18 @@ function tick(){
         a1.latex=a.text.substring(a.text.indexOf("\n"),a.text.length)
         window.Calc.setExpression(a1)
       } else if(a.text.substring(0,8)=="setLabel"){
-        a1=exp[Number(a.text.substring(9,a.text.indexOf("\n")))-1];
+        a1=exp[Number(a.text.substring(8,a.text.indexOf("\n")))-1];
         a1.label=a.text.substring(a.text.indexOf("\n")+1,a.text.length)
         window.Calc.setExpression(a1)
       } else if(a.text.substring(0,10)=="labelLatex"){
-        a1=exp[Number(a.text.substring(11,a.text.indexOf(",")))-1];
+        a1=exp[Number(a.text.substring(10,a.text.indexOf(",")))-1];
+        console.log([a.text.indexOf(",")+2,a.text.indexOf("\n")])
         var a2=exp[Number(a.text.substring(a.text.indexOf(",")+1,a.text.indexOf("\n")))-1];
         a2.latex=a1.label
         window.Calc.setExpression(a2)
       } else if(a.text.substring(0,8)=="function"){
         if (func == 2){
-          func = confirm("This graph uses javascript functions./nWould you like to enable them?/n(Note that this runs every millisecond.)")
+          func = confirm("This graph uses javascript functions. Would you like to enable them? (Note that this runs every millisecond.)")
         }
         if (func){
           a1 = Function(a.text.substring(a.text.indexOf("\n")+1,a.text.length));
