@@ -27,7 +27,6 @@ function tick(){
         window.Calc.setExpression(a1)
       } else if(a.text.substring(0,10)=="labelLatex"){
         a1=exp[Number(a.text.substring(10,a.text.indexOf(",")))-1];
-        console.log([a.text.indexOf(",")+2,a.text.indexOf("\n")])
         var a2=exp[Number(a.text.substring(a.text.indexOf(",")+1,a.text.indexOf("\n")))-1];
         a2.latex=a1.label
         window.Calc.setExpression(a2)
