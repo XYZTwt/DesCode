@@ -19,19 +19,19 @@ function tick(){
       if(a.text.substring(0,7)=="setLatex"){
         var a1=exp[Number(a.text.substring(0,a.text.indexOf("\n")-1))-1];
         a1.latex=a.text.substring(a.text.indexOf("\n"),a.text.length)
-        Calc.setExpression(a1)
+        window.Calc.setExpression(a1)
       } else if(a.text.substring(0,7)=="setLabel"){
         var a1=exp[Number(a.text.substring(0,a.text.indexOf("\n")))-1];
         a1.label=a.text.substring(a.text.indexOf("\n")+1,a.text.length)
-        Calc.setExpression(a1)
+        window.Calc.setExpression(a1)
       } else if(a.text.substring(0,9)=="labelLatex"){
         var a1=exp[Number(a.text.substring(0,a.text.indexOf(",")))-1];
         var a2=exp[Number(a.text.substring(a.text.indexOf(",")+1,a.text.indexOf("\n")))-1];
         a2.latex=a1.label
-        Calc.setExpression(a2)
+        window.Calc.setExpression(a2)
       } else if(a.text.substring(0,7)=="function"){
         if (func == 2){
-          func = confirm("This graph uses javascript functions.\nWould you like to enable them?\n(Remember that the code will run every millisecond.)")
+          func = confirm("This graph uses javascript functions. Would you like to enable them?")
         }
         if (func){
           var a1 = Function(a.text.substring(a.text.indexOf("\n")+1,a.text.length));
@@ -41,4 +41,3 @@ function tick(){
     }
   })
 }
-var ticking = setInterval(mycode, 1);
