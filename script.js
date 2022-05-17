@@ -18,15 +18,15 @@ function tick(){
     if(a.text){
         var a1;
       if(a.text.substring(0,8)=="setLatex"){
-        a1=exp[Number(a.text.substring(0,a.text.indexOf("\n")-1))-1];
+        a1=exp[Number(a.text.substring(9,a.text.indexOf("\n")-1))-1];
         a1.latex=a.text.substring(a.text.indexOf("\n"),a.text.length)
         window.Calc.setExpression(a1)
       } else if(a.text.substring(0,8)=="setLabel"){
-        a1=exp[Number(a.text.substring(0,a.text.indexOf("\n")))-1];
+        a1=exp[Number(a.text.substring(9,a.text.indexOf("\n")))-1];
         a1.label=a.text.substring(a.text.indexOf("\n")+1,a.text.length)
         window.Calc.setExpression(a1)
       } else if(a.text.substring(0,10)=="labelLatex"){
-        a1=exp[Number(a.text.substring(0,a.text.indexOf(",")))-1];
+        a1=exp[Number(a.text.substring(11,a.text.indexOf(",")))-1];
         var a2=exp[Number(a.text.substring(a.text.indexOf(",")+1,a.text.indexOf("\n")))-1];
         a2.latex=a1.label
         window.Calc.setExpression(a2)
