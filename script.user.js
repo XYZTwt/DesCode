@@ -5,7 +5,7 @@
 // @grant       none
 // @version     1.0
 // @run-at      document-start
-// @author      xyztWT
+// @author      XYZTwt
 // @description Note Coding!
 // @downloadURL https://github.com/27182818284590/DesCode/raw/script.js
 // @updateURL   https://github.com/27182818284590/DesCode/raw/script.js
