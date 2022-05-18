@@ -5,7 +5,7 @@
 // @grant       none
 // @version     1.0
 // @run-at      document-start
-// @author      XYZTwt
+// @author      xyztWT
 // @description Note Coding!
 // @downloadURL https://github.com/27182818284590/DesCode/raw/script.js
 // @updateURL   https://github.com/27182818284590/DesCode/raw/script.js
@@ -45,6 +45,14 @@ function tick(){
             a2.latex = a.text.substring(a.text.indexOf("\n")+1,a.text.lastIndexOf("\n"))+a.text.substring(a.text.lastIndexOf("\n")+1,a.text.length)
           }
           window.Calc.setExpression(a2)
+        } else if(a.text.substring(0,12)=="j:function++"){
+          if (func == 2){
+            func = confirm("This graph uses javascript functions. Would you like to enable them? (Note that this runs every centisecond.)")
+          }
+          if (func){
+            a1 = Function("function setLatex(index,latex){var exp=window.Calc.getState().expressions.list;var a1=exp[index];a1.latex=latex;window.Calc.setExpression(a1)};function get(index){var exp=window.Calc.getState().expressions.list;return exp[index]};"+a.text.substring(a.text.indexOf("\n")+1,a.text.length))
+            a1()
+          }
         } else if(a.text.substring(0,10)=="j:function"){
           if (func == 2){
             func = confirm("This graph uses javascript functions. Would you like to enable them? (Note that this runs every centisecond.)")
