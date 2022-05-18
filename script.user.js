@@ -47,7 +47,7 @@ function tick(){
           window.Calc.setExpression(a2)
         } else if(a.text.substring(0,10)=="j:function"){
           if (func == 2){
-            func = confirm("This graph uses javascript functions. Would you like to enable them? (Note that this runs every millisecond.)")
+            func = confirm("This graph uses javascript functions. Would you like to enable them? (Note that this runs every centisecond.)")
           }
           if (func){
             a1 = Function(a.text.substring(a.text.indexOf("\n")+1,a.text.length));
@@ -58,4 +58,4 @@ function tick(){
     }
   })
 }
-var ticking = setInterval(tick, 1);
+var ticking = setInterval(tick, 10);
