@@ -7,8 +7,8 @@
 // @run-at      document-start
 // @author      xyztWT
 // @description Note Coding!
-// @downloadURL https://github.com/27182818284590/DesCode/raw/script.js
-// @updateURL   https://github.com/27182818284590/DesCode/raw/script.js
+// @downloadURL https://github.com/27182818284590/DesCode/raw/main/script.js
+// @updateURL   https://github.com/27182818284590/DesCode/raw/main/script.js
 // ==/UserScript==
 
 var func = 2;
