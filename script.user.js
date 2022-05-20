@@ -3,7 +3,7 @@
 // @namespace   Scripts
 // @match       *://www.desmos.com/calculator*
 // @grant       none
-// @version     1.0
+// @version     ∞
 // @run-at      document-start
 // @author      xyztWT
 // @description Code in desmos using "Note Tools"
