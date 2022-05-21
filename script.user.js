@@ -11,6 +11,8 @@
 // @updateURL   https://github.com/27182818284590/DesCode/raw/script.js
 // ==/UserScript==
 
+console.log('DesCode by\n__   ____     _______________       _   \n\\ \\ / /\\ \\   / /___  /__   __|     | |\n \\ V /  \\ \\_/ /   / /   | |_      _| |_\n  > <    \\   /   / /    | \\ \\ /\\ / / __|\n / . \\    | |   / /__   | |\\ V  V /| |_\n/_/ \\_\\   |_|  /_____|  |_| \\_/\\_/  \\__|\n')
+window.Calc = {getState:function(){return {expressions:{list:[]}}}}
 var func = 2;
 var enabled = 1;
 function tick(){
